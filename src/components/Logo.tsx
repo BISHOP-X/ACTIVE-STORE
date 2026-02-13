@@ -25,7 +25,7 @@ export default function Logo({
         <img
           src="/ACTIVE_STORE_LOGO-removebg-preview.png"
           alt="Active Store"
-          className={`${s.h} w-auto object-contain`}
+          className={`${s.h} w-auto object-contain dark:brightness-0 dark:invert`}
         />
       </span>
     )
@@ -37,7 +37,7 @@ export default function Logo({
       <img
         src="/ACTIVE_STORE_LOGO-removebg-preview.png"
         alt="Active Store"
-        className={`${s.h} w-auto object-contain`}
+        className={`${s.h} w-auto object-contain dark:brightness-0 dark:invert`}
       />
     </span>
   )
