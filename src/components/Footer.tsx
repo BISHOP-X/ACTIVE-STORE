@@ -28,7 +28,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
             <div className="mb-4">
-              <Logo size="default" className="[&_span]:!text-white" />
+              <Logo size="default" className="[&_img]:brightness-0 [&_img]:invert" />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Your trusted marketplace for authentic social media accounts and digital services. Quality,

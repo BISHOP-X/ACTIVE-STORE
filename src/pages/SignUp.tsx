@@ -50,7 +50,7 @@ export default function SignUp() {
         <div className="relative z-10 flex flex-col justify-between p-10 xl:p-14 text-white w-full">
           <div>
             <Link to="/">
-              <Logo variant="full" size="lg" className="[&_span]:!text-white" />
+              <Logo variant="full" size="lg" className="[&_img]:brightness-0 [&_img]:invert" />
             </Link>
           </div>
 

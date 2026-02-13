@@ -1,4 +1,4 @@
-import { ArrowRight, Facebook, Instagram, Twitter, Music, Phone, TrendingUp, Code, Shield } from 'lucide-react'
+import { ArrowRight, Facebook, Instagram, Twitter, Music, Phone, TrendingUp, Shield, Wallet } from 'lucide-react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
 const features = [
@@ -7,14 +7,14 @@ const features = [
     title: 'Facebook Accounts',
     description: 'Authentic Facebook accounts for marketing and business growth',
     color: 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400',
-    image: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=400&h=300&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?w=400&h=300&fit=crop&q=80',
   },
   {
     icon: Instagram,
     title: 'Instagram Accounts',
     description: 'Verified Instagram profiles for influencers and brands',
     color: 'bg-pink-50 dark:bg-pink-900/20 text-pink-600 dark:text-pink-400',
-    image: 'https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?w=400&h=300&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=400&h=300&fit=crop&q=80',
   },
   {
     icon: Twitter,
@@ -28,35 +28,35 @@ const features = [
     title: 'TikTok Accounts',
     description: 'Trending TikTok accounts ready for content creation',
     color: 'bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200',
-    image: 'https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=400&h=300&fit=crop&q=80',
+    image: '/TIKTOK.jpg',
   },
   {
     icon: Phone,
     title: 'Foreign Numbers',
     description: 'International phone numbers for verification and business',
     color: 'bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400',
-    image: 'https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&h=300&fit=crop&q=80',
+    image: '/FOREIGN NUMBERS.jpg',
   },
   {
     icon: TrendingUp,
     title: 'Follower Boosting',
     description: 'Organic growth strategies to increase your followers',
     color: 'bg-orange-50 dark:bg-orange-900/20 text-orange-500 dark:text-orange-400',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop&q=80',
-  },
-  {
-    icon: Code,
-    title: 'Website & App Development',
-    description: 'Custom web and mobile applications for your business',
-    color: 'bg-violet-50 dark:bg-violet-900/20 text-violet-600 dark:text-violet-400',
-    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop&q=80',
+    image: '/BOOST.jpg',
   },
   {
     icon: Shield,
     title: 'VPN & Work Tools',
     description: 'Secure VPN services and professional work tools',
     color: 'bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400',
-    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop&q=80',
+    image: '/VPN TOOLS.jpg',
+  },
+  {
+    icon: Wallet,
+    title: 'Airtime & Bills',
+    description: 'Convenient airtime top-up and bill payment services',
+    color: 'bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400',
+    image: '/AIRTIME AND BILLS.jpg',
   },
 ]
 
