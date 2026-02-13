@@ -11,10 +11,10 @@ export default function Logo({
   variant?: 'full' | 'icon' | 'text'
 }) {
   const sizes = {
-    sm: { h: 'h-7 sm:h-8' },
-    default: { h: 'h-8 sm:h-10' },
-    lg: { h: 'h-10 sm:h-12' },
-    xl: { h: 'h-14 sm:h-16' },
+    sm: { h: 'h-10 sm:h-12' },
+    default: { h: 'h-12 sm:h-16' },
+    lg: { h: 'h-16 sm:h-20' },
+    xl: { h: 'h-20 sm:h-24' },
   }
 
   const s = sizes[size]
