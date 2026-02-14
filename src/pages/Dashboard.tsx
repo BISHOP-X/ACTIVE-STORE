@@ -262,24 +262,34 @@ function CategorySection({ title, items, platform }: {
   const PlatformIcon = platformIcons[platform]
 
   return (
-    <div className="rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700/40 shadow-sm">
+    <div className="rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700/40 shadow-lg hover:shadow-2xl transition-all duration-300">
       {/* Banner Header */}
-      <div className="bg-gradient-to-r from-primary-600 to-indigo-600 px-4 py-3">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
+      <div className="relative bg-gradient-to-r from-primary-600 via-indigo-600 to-primary-600 px-5 py-5 shadow-xl banner-animated overflow-hidden group cursor-pointer">
+        {/* Decorative circles with animation */}
+        <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -translate-y-8 translate-x-8 circle-float" />
+        <div className="absolute bottom-0 left-1/4 w-16 h-16 bg-white/5 rounded-full translate-y-6 circle-float" style={{animationDelay: '1s'}} />
+        <div className="absolute top-1/2 right-1/4 w-12 h-12 bg-white/5 rounded-full circle-float" style={{animationDelay: '2s'}} />
+        
+        {/* Sparkle effects */}
+        <div className="absolute top-3 right-20 w-2 h-2 bg-white/60 rounded-full sparkle" />
+        <div className="absolute top-1/2 right-1/3 w-1.5 h-1.5 bg-white/50 rounded-full sparkle" style={{animationDelay: '0.5s'}} />
+        <div className="absolute bottom-3 left-1/3 w-2 h-2 bg-white/40 rounded-full sparkle" style={{animationDelay: '1s'}} />
+        
+        <div className="relative z-10 flex items-center justify-between">
+          <div className="flex items-center gap-3">
             {PlatformIcon ? (
-              <div className="w-8 h-8 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center overflow-hidden">
-                <PlatformIcon className="w-6 h-6" />
+              <div className="w-11 h-11 rounded-xl bg-white/25 backdrop-blur-md flex items-center justify-center overflow-hidden shadow-lg ring-2 ring-white/30 transition-all duration-300 hover:scale-125 hover:rotate-12 banner-icon group-hover:shadow-2xl">
+                <PlatformIcon className="w-7 h-7" />
               </div>
             ) : (
-              <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center text-sm">📦</div>
+              <div className="w-11 h-11 rounded-xl bg-white/25 backdrop-blur-md flex items-center justify-center text-lg shadow-lg ring-2 ring-white/30 transition-all duration-300 hover:scale-125 hover:rotate-12 banner-icon group-hover:shadow-2xl">📦</div>
             )}
-            <h3 className="font-bold text-white text-sm uppercase tracking-wide">{title}</h3>
+            <h3 className="font-extrabold text-white text-base sm:text-lg uppercase tracking-wider drop-shadow-lg group-hover:tracking-widest transition-all duration-300">{title}</h3>
           </div>
-          <div className="hidden sm:flex items-center gap-6 text-[11px] text-white/70 font-medium uppercase tracking-wider">
-            <span>In stock</span>
-            <span>Price per unit</span>
-            <span>Sales</span>
+          <div className="hidden sm:flex items-center gap-6 text-xs text-white/80 font-semibold uppercase tracking-wider">
+            <span className="drop-shadow group-hover:text-white transition-colors duration-300">In stock</span>
+            <span className="drop-shadow group-hover:text-white transition-colors duration-300">Price per unit</span>
+            <span className="drop-shadow group-hover:text-white transition-colors duration-300">Sales</span>
           </div>
         </div>
       </div>
@@ -403,17 +413,28 @@ export default function Dashboard() {
           </div>
 
           {/* Popular Logs */}
-          <div className="rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700/40 shadow-sm animate-[fadeSlideUp_0.5s_ease-out_0.2s_both]">
-            <div className="bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-3">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center text-sm">⭐</div>
-                  <h3 className="font-bold text-white text-sm uppercase tracking-wide">POPULAR LOGS 🔥</h3>
+          <div className="rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700/40 shadow-lg hover:shadow-2xl transition-all duration-300 animate-[fadeSlideUp_0.5s_ease-out_0.2s_both]">
+            <div className="relative bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 px-5 py-5 shadow-xl banner-animated overflow-hidden group cursor-pointer">
+              {/* Decorative circles with animation */}
+              <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -translate-y-8 translate-x-8 circle-float" />
+              <div className="absolute bottom-0 left-1/3 w-16 h-16 bg-white/5 rounded-full translate-y-6 circle-float" style={{animationDelay: '1.5s'}} />
+              <div className="absolute top-1/2 left-1/4 w-12 h-12 bg-white/5 rounded-full circle-float" style={{animationDelay: '2.5s'}} />
+              
+              {/* Sparkle effects */}
+              <div className="absolute top-4 left-20 w-2 h-2 bg-white/70 rounded-full sparkle" />
+              <div className="absolute top-1/3 right-1/3 w-1.5 h-1.5 bg-white/60 rounded-full sparkle" style={{animationDelay: '0.7s'}} />
+              <div className="absolute bottom-4 right-1/4 w-2 h-2 bg-white/50 rounded-full sparkle" style={{animationDelay: '1.2s'}} />
+              <div className="absolute top-1/2 left-1/2 w-1 h-1 bg-white/60 rounded-full sparkle" style={{animationDelay: '1.8s'}} />
+              
+              <div className="relative z-10 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-11 h-11 rounded-xl bg-white/25 backdrop-blur-md flex items-center justify-center text-lg shadow-lg ring-2 ring-white/30 transition-all duration-300 hover:scale-125 hover:rotate-[360deg] banner-icon group-hover:shadow-2xl">⭐</div>
+                  <h3 className="font-extrabold text-white text-base sm:text-lg uppercase tracking-wider drop-shadow-lg group-hover:tracking-widest transition-all duration-300">POPULAR LOGS 🔥</h3>
                 </div>
-                <div className="hidden sm:flex items-center gap-6 text-[11px] text-white/70 font-medium uppercase tracking-wider">
-                  <span>In stock</span>
-                  <span>Price per unit</span>
-                  <span>Sales</span>
+                <div className="hidden sm:flex items-center gap-6 text-xs text-white/80 font-semibold uppercase tracking-wider">
+                  <span className="drop-shadow group-hover:text-white transition-colors duration-300">In stock</span>
+                  <span className="drop-shadow group-hover:text-white transition-colors duration-300">Price per unit</span>
+                  <span className="drop-shadow group-hover:text-white transition-colors duration-300">Sales</span>
                 </div>
               </div>
             </div>
