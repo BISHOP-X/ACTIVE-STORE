@@ -124,6 +124,14 @@ const popularLogs = [
     price: 5980,
     sales: 156,
   },
+  {
+    platform: 'instagram',
+    countries: ['US', 'CA'],
+    description: '3–7 YEARS Instagram 500–2,000 followers 📸 ACTIVE ACCOUNTS with profile picture and bio ✨ <USE 2FA KEY 🔑> LOGIN MAIL ON HOTMAIL.COM',
+    stock: 412,
+    price: 3250,
+    sales: 234,
+  },
 ]
 
 const categories = [
