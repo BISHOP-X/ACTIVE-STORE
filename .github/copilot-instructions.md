@@ -1,5 +1,8 @@
 # Active Store - Project Instructions
 
+## ⚠️ CRITICAL RULE
+**NEVER rewrite an entire file unless absolutely necessary.** Prefer targeted edits, extracting components into new files, and modular changes. Only delete-and-recreate as a last resort when partial edits are truly impossible.
+
 ## Project Overview
 React TypeScript e-commerce application with Tailwind CSS, shadcn/ui, and Supabase backend.
 

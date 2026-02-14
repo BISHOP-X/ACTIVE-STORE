@@ -6,9 +6,14 @@ import About from './components/About'
 import Features from './components/Features'
 import HowItWorks from './components/HowItWorks'
 import Footer from './components/Footer'
+import DashboardLayout from './components/DashboardLayout'
 import SignUp from './pages/SignUp'
 import SignIn from './pages/SignIn'
 import Dashboard from './pages/Dashboard'
+import MyOrders from './pages/MyOrders'
+import AddFunds from './pages/AddFunds'
+import Profile from './pages/Profile'
+import Rules from './pages/Rules'
 import { useTheme } from './hooks/useTheme'
 
 function LandingPage({ dark, toggle }: { dark: boolean; toggle: () => void }) {
@@ -42,7 +47,13 @@ function App() {
           <Route path="/" element={<LandingPage dark={dark} toggle={toggle} />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signin" element={<SignIn />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={<DashboardLayout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="orders" element={<MyOrders />} />
+            <Route path="funds" element={<AddFunds />} />
+            <Route path="profile" element={<Profile />} />
+            <Route path="rules" element={<Rules />} />
+          </Route>
         </Routes>
       </div>
     </BrowserRouter>
