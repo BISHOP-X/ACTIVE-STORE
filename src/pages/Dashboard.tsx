@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import {
   Eye, EyeOff, Phone, Globe, Heart, ChevronRight, ChevronDown, ChevronUp,
   TrendingUp, ArrowDownRight, ShoppingCart, Hash,
@@ -263,6 +264,7 @@ function CategorySection({ title, items, platform }: {
 
 /* ─── Dashboard Home ─── */
 export default function Dashboard() {
+  const navigate = useNavigate()
   const [balanceVisible, setBalanceVisible] = useState(true)
   const userName = 'bishop'
 
@@ -297,7 +299,7 @@ export default function Dashboard() {
                 </div>
                 <div className="flex items-center gap-3">
                   <p className="text-2xl sm:text-3xl font-bold tracking-tight">{balanceVisible ? 'NGN 0.00' : '••••••'}</p>
-                  <button className="text-xs bg-white text-primary-700 font-bold px-4 py-2 rounded-xl hover:bg-white/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:scale-95">
+                  <button onClick={() => navigate('/dashboard/funds')} className="text-xs bg-white text-primary-700 font-bold px-4 py-2 rounded-xl hover:bg-white/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:scale-95">
                     + Add Money
                   </button>
                 </div>

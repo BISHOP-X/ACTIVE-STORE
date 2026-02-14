@@ -14,6 +14,7 @@ import MyOrders from './pages/MyOrders'
 import AddFunds from './pages/AddFunds'
 import Profile from './pages/Profile'
 import Rules from './pages/Rules'
+import CustomerCare from './pages/CustomerCare'
 import { useTheme } from './hooks/useTheme'
 
 function LandingPage({ dark, toggle }: { dark: boolean; toggle: () => void }) {
@@ -53,6 +54,7 @@ function App() {
             <Route path="funds" element={<AddFunds />} />
             <Route path="profile" element={<Profile />} />
             <Route path="rules" element={<Rules />} />
+            <Route path="support" element={<CustomerCare />} />
           </Route>
         </Routes>
       </div>
