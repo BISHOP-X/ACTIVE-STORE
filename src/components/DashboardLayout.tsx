@@ -90,6 +90,7 @@ export default function DashboardLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [smsExpanded, setSmsExpanded] = useState(false)
   const [productsExpanded, setProductsExpanded] = useState(false)
+  const [categoryOpen, setCategoryOpen] = useState(false)
 
   const sidebarMainLinks = [
     { icon: Home, label: 'Home', path: '/dashboard' },
@@ -260,14 +261,52 @@ export default function DashboardLayout() {
         {/* Top Bar */}
         <header className="sticky top-0 z-30 bg-white/70 dark:bg-[#0c0f1a]/70 backdrop-blur-2xl border-b border-gray-200/50 dark:border-gray-700/20">
           <div className="flex items-center justify-between px-4 sm:px-6 h-16">
+            {/* Left: Category Dropdown */}
             <div className="flex items-center gap-3">
-              <button onClick={() => setSidebarOpen(true)} className="lg:hidden p-2 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400 transition-colors">
-                <Menu size={20} />
-              </button>
-              <div className="lg:hidden">
-                <Logo size="sm" />
+              <div className="relative">
+                <button
+                  onClick={() => setCategoryOpen(!categoryOpen)}
+                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 text-white text-sm font-bold shadow-lg shadow-amber-500/20 hover:shadow-xl hover:shadow-amber-500/30 active:scale-95 transition-all duration-200"
+                >
+                  Select a category
+                  <ChevronDown size={16} className={`transition-transform duration-300 ${categoryOpen ? 'rotate-180' : ''}`} />
+                </button>
+
+                {/* Dropdown panel */}
+                {categoryOpen && (
+                  <>
+                    <div className="fixed inset-0 z-40" onClick={() => setCategoryOpen(false)} />
+                    <div className="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700/50 rounded-2xl shadow-2xl z-50 overflow-hidden animate-[fadeSlideUp_0.2s_ease-out]">
+                      <div className="max-h-[70vh] overflow-y-auto scrollbar-hide py-1">
+                        {productCategories.map((cat) => (
+                          <button
+                            key={cat.label}
+                            onClick={() => { navigate('/dashboard'); setCategoryOpen(false) }}
+                            className="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800/60 transition-all duration-150 group"
+                          >
+                            <div className="shrink-0 transition-transform duration-200 group-hover:scale-110">
+                              <cat.icon />
+                            </div>
+                            <span className="flex-1 text-left">{cat.label}</span>
+                            <ChevronDown size={14} className="-rotate-90 text-gray-400 group-hover:text-primary-500 transition-colors" />
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
+              <div className="hidden lg:block">
+                {/* spacer on desktop */}
               </div>
             </div>
+
+            {/* Center: Logo (mobile) */}
+            <div className="lg:hidden absolute left-1/2 -translate-x-1/2">
+              <Logo size="sm" />
+            </div>
+
+            {/* Right: Theme toggle, Balance, Hamburger */}
             <div className="flex items-center gap-3">
               <button onClick={toggle} className="p-2.5 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400 transition-all duration-300 hover:rotate-12">
                 {dark ? <Sun size={18} /> : <Moon size={18} />}
@@ -276,6 +315,9 @@ export default function DashboardLayout() {
                 <span className="text-gray-500 dark:text-gray-400">Balance:</span>
                 <span className="font-bold bg-gradient-to-r from-primary-600 to-indigo-600 bg-clip-text text-transparent">NGN 0.00</span>
               </div>
+              <button onClick={() => setSidebarOpen(true)} className="lg:hidden p-2 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400 transition-colors">
+                <Menu size={20} />
+              </button>
             </div>
           </div>
         </header>
