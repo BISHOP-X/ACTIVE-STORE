@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Eye, EyeOff, Mail, Lock, ArrowRight, Shield, Zap, Star, ArrowLeft } from 'lucide-react'
 import Logo from '../components/Logo'
 
@@ -12,10 +12,11 @@ const stats = [
 export default function SignIn() {
   const [show, setShow] = useState(false)
   const [form, setForm] = useState({ email: '', password: '' })
+  const navigate = useNavigate()
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // TODO: Supabase auth
+    navigate('/dashboard')
   }
 
   return (
@@ -120,13 +121,6 @@ export default function SignIn() {
                   {show ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>
               </div>
-            </div>
-
-            <div className="auth-slide-up" style={{ animationDelay: '0.35s' }}>
-              <label className="flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" className="w-4 h-4 rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
-                <span className="text-sm text-gray-600 dark:text-gray-400">Keep me signed in</span>
-              </label>
             </div>
 
             <button

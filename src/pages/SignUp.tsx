@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Eye, EyeOff, Mail, Lock, User, ArrowRight, CheckCircle2, ArrowLeft } from 'lucide-react'
 import Logo from '../components/Logo'
 
@@ -13,10 +13,11 @@ const benefits = [
 export default function SignUp() {
   const [show, setShow] = useState(false)
   const [form, setForm] = useState({ name: '', email: '', password: '' })
+  const navigate = useNavigate()
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // TODO: Supabase auth
+    navigate('/dashboard')
   }
 
   return (
@@ -196,15 +197,6 @@ export default function SignUp() {
                   {show ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>
               </div>
-            </div>
-
-            <div className="auth-slide-up" style={{ animationDelay: '0.4s' }}>
-              <label className="flex items-start gap-2 cursor-pointer">
-                <input type="checkbox" className="mt-1 w-4 h-4 rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
-                <span className="text-xs text-gray-500 dark:text-gray-400">
-                  I agree to the <a href="#" className="text-primary-600 dark:text-primary-400 hover:underline">Terms of Service</a> and <a href="#" className="text-primary-600 dark:text-primary-400 hover:underline">Privacy Policy</a>
-                </span>
-              </label>
             </div>
 
             <button

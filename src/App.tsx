@@ -8,6 +8,7 @@ import HowItWorks from './components/HowItWorks'
 import Footer from './components/Footer'
 import SignUp from './pages/SignUp'
 import SignIn from './pages/SignIn'
+import Dashboard from './pages/Dashboard'
 import { useTheme } from './hooks/useTheme'
 
 function LandingPage({ dark, toggle }: { dark: boolean; toggle: () => void }) {
@@ -41,6 +42,7 @@ function App() {
           <Route path="/" element={<LandingPage dark={dark} toggle={toggle} />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signin" element={<SignIn />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </div>
     </BrowserRouter>
