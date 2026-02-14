@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {
   Eye, EyeOff, Phone, Globe, Heart, ChevronRight, ChevronDown, ChevronUp,
-  TrendingUp, ArrowDownRight, ShoppingCart, Hash,
+  TrendingUp, ArrowDownRight, ShoppingCart,
 } from 'lucide-react'
 import ReactCountryFlag from 'react-country-flag'
 
@@ -90,6 +90,7 @@ const popularLogs = [
     description: 'Aged EUROPE Facebook with 100–5,000 friends nice profile 60% has create profile and Active marketplace 🌟🌟 majority of the account has post {USE VPN TO LOGIN}(6 months old)',
     stock: 166,
     price: 2980,
+    sales: 45,
   },
   {
     platform: 'twitter',
@@ -97,6 +98,7 @@ const popularLogs = [
     description: '17–20 YEARS OLDEST TWITTER WITH 0-50 FOLLOWERS, VERY STRONG 💪 ACCOUNTS 🚀🚀🚀 (login mail on FIRSTMAIL.LTD)',
     stock: 258,
     price: 2480,
+    sales: 127,
   },
   {
     platform: 'instagram',
@@ -104,6 +106,7 @@ const popularLogs = [
     description: '6–10 YEARS LOW FOLLOWER 🌸 Instagram account MOST ACCOUNTS HAS POST 🌆🌆 VERY STRONG 💪 <USE 2FA KEY 🔑 TO LOGIN> LOGIN MAIL ON GMX.NET',
     stock: 351,
     price: 2490,
+    sales: 89,
   },
   {
     platform: 'facebook',
@@ -111,6 +114,7 @@ const popularLogs = [
     description: '1–5 YEARS FACEBOOK WITH 200+ FRIENDS has marketplace, contains post and good profile 🥶❄️❄️ (suitable for Celeb work)',
     stock: 333,
     price: 3980,
+    sales: 203,
   },
 ]
 
@@ -119,48 +123,48 @@ const categories = [
     title: 'FACEBOOK',
     platform: 'facebook',
     items: [
-      { description: '8-15 years Facebook with 100+ friends & Active marketplace 85% have create profile very strong accounts 💪', stock: 30, price: 11300, countries: ['US'] },
-      { description: '8-15 years Facebook with 0–50 friends & Active marketplace 60% have create profile', stock: 11, price: 6900, countries: ['DE'] },
-      { description: '2–5 year Facebook with 0-50 friends & Active marketplace 85% have create profile CHEAPEST OLD ACCOUNT', stock: 78, price: 4980, countries: ['GB', 'UA', 'FR', 'DE'] },
+      { description: '8-15 years Facebook with 100+ friends & Active marketplace 85% have create profile very strong accounts 💪', stock: 30, price: 11300, sales: 56, countries: ['US'] },
+      { description: '8-15 years Facebook with 0–50 friends & Active marketplace 60% have create profile', stock: 11, price: 6900, sales: 23, countries: ['DE'] },
+      { description: '2–5 year Facebook with 0-50 friends & Active marketplace 85% have create profile CHEAPEST OLD ACCOUNT', stock: 78, price: 4980, sales: 178, countries: ['GB', 'UA', 'FR', 'DE'] },
     ],
   },
   {
     title: 'INSTAGRAM',
     platform: 'instagram',
     items: [
-      { description: '6–10 YEARS 200+ FOLLOWER 🌸 Instagram MOST ACCOUNTS HAS POST VERY STRONG 💪 <USE 2FA KEY 🔑> LOG IN MAIL ON YOPMAIL.COM', stock: 0, price: 4450, countries: ['US'] },
-      { description: '6–10 YEARS 1,000+ FOLLOWER 🌸 Instagram MOST ACCOUNTS HAS POST VERY STRONG 💪 <USE 2FA KEY 🔑> LOG IN MAIL ON YOPMAIL.COM', stock: 0, price: 6450, countries: ['US'] },
+      { description: '6–10 YEARS 200+ FOLLOWER 🌸 Instagram MOST ACCOUNTS HAS POST VERY STRONG 💪 <USE 2FA KEY 🔑> LOG IN MAIL ON YOPMAIL.COM', stock: 0, price: 4450, sales: 312, countries: ['US'] },
+      { description: '6–10 YEARS 1,000+ FOLLOWER 🌸 Instagram MOST ACCOUNTS HAS POST VERY STRONG 💪 <USE 2FA KEY 🔑> LOG IN MAIL ON YOPMAIL.COM', stock: 0, price: 6450, sales: 198, countries: ['US'] },
     ],
   },
   {
     title: 'TIKTOK',
     platform: 'tiktok',
     items: [
-      { description: 'AGED with 0–20 followers TIKTOK (LOGIN MAIL ON OUTLOOK.LIVE.COM) USE VPN TO LOGIN ⭐️⭐️⭐️', stock: 297, price: 999, countries: ['GB'] },
-      { description: 'AGED 200–500 followers TIKTOK (LOGIN MAIL ON OUTLOOK.LIVE.COM) USE VPN TO LOGIN 🌻🌻✅', stock: 0, price: 1999, countries: ['GB'] },
+      { description: 'AGED with 0–20 followers TIKTOK (LOGIN MAIL ON OUTLOOK.LIVE.COM) USE VPN TO LOGIN ⭐️⭐️⭐️', stock: 297, price: 999, sales: 342, countries: ['GB'] },
+      { description: 'AGED 200–500 followers TIKTOK (LOGIN MAIL ON OUTLOOK.LIVE.COM) USE VPN TO LOGIN 🌻🌻✅', stock: 0, price: 1999, sales: 156, countries: ['GB'] },
     ],
   },
   {
     title: 'TWITTER',
     platform: 'twitter',
     items: [
-      { description: '10–20 years old EUROPE TWITTER with 30–100 followers and nice profile <LOGIN MAIL ON FIRSTMAIL.LTD>', stock: 362, price: 3480, countries: ['EU', 'FR'] },
-      { description: '11–20 years old EUROPE TWITTER with 45—100 followers and nice profile <LOGIN MAIL ON FIRSTMAIL.LTD> 🌸💐', stock: 129, price: 3690, countries: ['EU', 'PL', 'IE'] },
+      { description: '10–20 years old EUROPE TWITTER with 30–100 followers and nice profile <LOGIN MAIL ON FIRSTMAIL.LTD>', stock: 362, price: 3480, sales: 87, countries: ['EU', 'FR'] },
+      { description: '11–20 years old EUROPE TWITTER with 45—100 followers and nice profile <LOGIN MAIL ON FIRSTMAIL.LTD> 🌸💐', stock: 129, price: 3690, sales: 45, countries: ['EU', 'PL', 'IE'] },
     ],
   },
   {
     title: 'VPN',
     platform: 'vpn',
     items: [
-      { description: 'HMA VPN: This is the best vpn for Everything you can use it for fb dating and any app (one user per log) 1 month 💯💯', stock: 49, price: 3450, countries: [] },
+      { description: 'HMA VPN: This is the best vpn for Everything you can use it for fb dating and any app (one user per log) 1 month 💯💯', stock: 49, price: 3450, sales: 156, countries: [] },
     ],
   },
   {
     title: 'MAILS 📫',
     platform: 'mails',
     items: [
-      { description: 'HOTMAIL/OUTLOOK MAIL: Aged Hotmail account', stock: 294, price: 250, countries: ['US'] },
-      { description: 'GMX MAIL: Gmxmail.com email 📧 easy login just login here on GMX MAIL APP', stock: 811, price: 198, countries: ['US'] },
+      { description: 'HOTMAIL/OUTLOOK MAIL: Aged Hotmail account', stock: 294, price: 250, sales: 1024, countries: ['US'] },
+      { description: 'GMX MAIL: Gmxmail.com email 📧 easy login just login here on GMX MAIL APP', stock: 811, price: 198, sales: 567, countries: ['US'] },
     ],
   },
 ]
@@ -177,87 +181,137 @@ const recentActivity = [
 
 
 /* ─── Components ─── */
-function ProductCard({ description, stock, price, platform, countries, delay = 0 }: {
-  description: string; stock: number; price: number; platform?: string; countries?: string[]; delay?: number
+function ProductRow({ description, stock, price, sales, platform, countries, delay = 0 }: {
+  description: string; stock: number; price: number; sales: number; platform?: string; countries?: string[]; delay?: number
 }) {
-  const platformColors: Record<string, string> = {
-    facebook: 'border-l-blue-500 hover:shadow-blue-500/10',
-    instagram: 'border-l-pink-500 hover:shadow-pink-500/10',
-    twitter: 'border-l-sky-500 hover:shadow-sky-500/10',
-    tiktok: 'border-l-gray-800 dark:border-l-gray-200 hover:shadow-gray-500/10',
-    vpn: 'border-l-indigo-500 hover:shadow-indigo-500/10',
-    mails: 'border-l-red-400 hover:shadow-red-400/10',
-  }
-
   const PlatformIcon = platform ? platformIcons[platform] : null
 
   return (
     <div
-      className={`group bg-white dark:bg-gray-800/80 backdrop-blur-sm border border-gray-100 dark:border-gray-700/30 rounded-2xl p-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border-l-4 ${platform ? platformColors[platform] || 'border-l-primary-500' : 'border-l-primary-500'} animate-[fadeSlideUp_0.4s_ease-out_both]`}
-      style={{ animationDelay: `${delay * 0.08}s` }}
+      className="group flex items-center gap-3 px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/40 transition-all duration-200 animate-[fadeSlideUp_0.3s_ease-out_both]"
+      style={{ animationDelay: `${delay * 0.05}s` }}
     >
-      <div className="flex gap-3">
-        {PlatformIcon && (
-          <div className="shrink-0 pt-0.5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-            <PlatformIcon className="w-10 h-10 rounded-xl shadow-md" />
-          </div>
-        )}
-        <div className="flex-1 min-w-0">
-          <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-2.5">
-            <span className="font-bold text-gray-900 dark:text-white capitalize">{platform}:</span>{' '}
-            {countries && countries.length > 0 && <CountryFlags countries={countries} />}{' '}
-            {description}
-          </p>
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className={`text-[11px] font-semibold px-2.5 py-1 rounded-full inline-flex items-center gap-1 ${stock > 0 ? 'bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 ring-1 ring-emerald-200/50 dark:ring-emerald-800/50' : 'bg-red-50 dark:bg-red-900/20 text-red-500 dark:text-red-400 ring-1 ring-red-200/50 dark:ring-red-800/50'}`}>
-              <Hash size={10} />
-              {stock}
-            </span>
-            <span className="text-[11px] font-bold text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-700/80 px-2.5 py-1 rounded-full">
-              ₦{price.toLocaleString()}
-            </span>
-            <button className={`ml-auto text-xs font-bold px-5 py-1.5 rounded-full transition-all duration-300 ${stock > 0 ? 'bg-gradient-to-r from-primary-600 to-indigo-600 hover:from-primary-700 hover:to-indigo-700 text-white shadow-lg shadow-primary-600/20 hover:shadow-xl hover:shadow-primary-600/30 hover:scale-105 active:scale-95' : 'bg-gray-200 dark:bg-gray-700 text-gray-400 cursor-not-allowed'}`} disabled={stock === 0}>
-              {stock > 0 ? 'BUY' : 'SOLD'}
-            </button>
-          </div>
+      {PlatformIcon && (
+        <div className="shrink-0">
+          <PlatformIcon className="w-8 h-8 rounded-lg shadow-sm" />
+        </div>
+      )}
+      <div className="flex-1 min-w-0">
+        <p className="text-xs text-gray-600 dark:text-gray-300 leading-relaxed line-clamp-2">
+          {countries && countries.length > 0 && <CountryFlags countries={countries} />}{' '}
+          {description}
+        </p>
+        {/* Mobile stats */}
+        <div className="flex sm:hidden items-center gap-2 mt-1.5">
+          <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full ${stock > 0 ? 'bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400' : 'bg-red-50 dark:bg-red-900/20 text-red-500 dark:text-red-400'}`}>
+            {stock} in stock
+          </span>
+          <span className="text-[10px] font-bold text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-700/80 px-2 py-0.5 rounded-full">
+            ₦{price.toLocaleString()}
+          </span>
         </div>
       </div>
+      {/* Desktop stats */}
+      <div className="hidden sm:flex items-center gap-3 shrink-0">
+        <span className={`text-[11px] font-semibold px-2.5 py-1 rounded-full min-w-[3rem] text-center ${stock > 0 ? 'bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400' : 'bg-red-50 dark:bg-red-900/20 text-red-500 dark:text-red-400'}`}>
+          {stock}
+        </span>
+        <span className="text-[11px] font-bold text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-700/80 px-2.5 py-1 rounded-full min-w-[4.5rem] text-center">
+          ₦{price.toLocaleString()}
+        </span>
+        <span className="text-[11px] font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 px-2.5 py-1 rounded-full min-w-[3rem] text-center">
+          {sales}
+        </span>
+      </div>
+      {/* Buy button */}
+      <button
+        className={`shrink-0 text-xs font-bold px-4 py-1.5 rounded-full flex items-center gap-1 transition-all duration-200 ${
+          stock > 0
+            ? 'bg-gradient-to-r from-primary-600 to-indigo-600 hover:from-primary-700 hover:to-indigo-700 text-white shadow-md hover:shadow-lg active:scale-95'
+            : 'bg-gray-200 dark:bg-gray-700 text-gray-400 cursor-not-allowed'
+        }`}
+        disabled={stock === 0}
+      >
+        {stock > 0 ? <>Buy <ChevronRight size={12} /></> : 'Sold'}
+      </button>
     </div>
   )
 }
 
 function CategorySection({ title, items, platform }: {
-  title: string; items: { description: string; stock: number; price: number; countries: string[] }[]; platform: string
+  title: string; items: { description: string; stock: number; price: number; sales: number; countries: string[] }[]; platform: string
 }) {
   const [expanded, setExpanded] = useState(false)
-  const shown = expanded ? items : items.slice(0, 2)
+  const shown = expanded ? items : items.slice(0, 5)
   const PlatformIcon = platformIcons[platform]
 
   return (
-    <div>
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center gap-2.5">
-          {PlatformIcon ? (
-            <PlatformIcon className="w-9 h-9 rounded-xl shadow-md" />
-          ) : (
-            <div className="w-9 h-9 rounded-xl bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-sm shadow-md">📦</div>
-          )}
-          <h3 className="font-bold text-gray-900 dark:text-white text-sm sm:text-base uppercase tracking-wide">{title}</h3>
+    <div className="rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700/40 shadow-sm">
+      {/* Banner Header */}
+      <div className="bg-gradient-to-r from-primary-600 to-indigo-600 px-4 py-3">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2.5">
+            {PlatformIcon ? (
+              <div className="w-8 h-8 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center overflow-hidden">
+                <PlatformIcon className="w-6 h-6" />
+              </div>
+            ) : (
+              <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center text-sm">📦</div>
+            )}
+            <h3 className="font-bold text-white text-sm uppercase tracking-wide">{title}</h3>
+          </div>
+          <div className="hidden sm:flex items-center gap-6 text-[11px] text-white/70 font-medium uppercase tracking-wider">
+            <span>In stock</span>
+            <span>Price per unit</span>
+            <span>Sales</span>
+          </div>
         </div>
-        <button className="text-xs text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-semibold flex items-center gap-1 px-3 py-1.5 rounded-full hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-all">
-          See More <ChevronRight size={14} />
-        </button>
       </div>
-      <div className="grid gap-3">
+
+      {/* Product Rows */}
+      <div className="divide-y divide-gray-100 dark:divide-gray-700/30 bg-white dark:bg-gray-800/60">
         {shown.map((item, i) => (
-          <ProductCard key={i} {...item} platform={platform} delay={i} />
+          <ProductRow key={i} {...item} platform={platform} delay={i} />
         ))}
       </div>
-      {items.length > 2 && (
-        <button onClick={() => setExpanded(!expanded)} className="mt-3 text-xs text-gray-500 dark:text-gray-400 flex items-center gap-1 hover:text-primary-600 dark:hover:text-primary-400 transition-colors mx-auto px-4 py-1.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
-          {expanded ? <><ChevronUp size={14} /> Show less</> : <><ChevronDown size={14} /> Show {items.length - 2} more</>}
+
+      {/* Load More */}
+      {items.length > 5 && (
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="w-full py-3 text-xs font-semibold text-primary-600 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-all flex items-center justify-center gap-1.5 border-t border-gray-100 dark:border-gray-700/30 bg-white dark:bg-gray-800/60"
+        >
+          {expanded ? (
+            <>Show less <ChevronUp size={14} /></>
+          ) : (
+            <>Load more products <ChevronDown size={14} /></>
+          )}
         </button>
       )}
+    </div>
+  )
+}
+
+/* ─── Marquee Ticker ─── */
+function MarqueeTicker() {
+  const announcements = [
+    '🔥 New stock added: Facebook Aged accounts now available!',
+    '⚡ Lightning fast delivery on all orders',
+    '🎉 Welcome offer: Get 5% bonus on first deposit',
+    '📢 Join our Telegram for latest updates and announcements',
+    '✅ Over 30,000+ satisfied customers worldwide',
+  ]
+
+  return (
+    <div className="relative overflow-hidden bg-gradient-to-r from-primary-600 to-indigo-600 rounded-xl py-2.5 shadow-md animate-[fadeSlideUp_0.3s_ease-out]">
+      <div className="marquee-track">
+        <span className="marquee-content text-xs font-medium text-white/90">
+          {announcements.join('   •   ')}
+        </span>
+        <span className="marquee-content text-xs font-medium text-white/90" aria-hidden="true">
+          {announcements.join('   •   ')}
+        </span>
+      </div>
     </div>
   )
 }
@@ -270,6 +324,9 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-6">
+          {/* Scrolling Announcement Ticker */}
+          <MarqueeTicker />
+
           {/* Welcome Card */}
           <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary-600 via-primary-700 to-indigo-800 p-6 sm:p-8 text-white shadow-2xl shadow-primary-600/20 animate-[fadeSlideUp_0.5s_ease-out]">
             {/* Decorative elements */}
@@ -329,19 +386,23 @@ export default function Dashboard() {
           </div>
 
           {/* Popular Logs */}
-          <div className="animate-[fadeSlideUp_0.5s_ease-out_0.2s_both]">
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-sm shadow-lg shadow-amber-500/20">⭐</div>
-                <h3 className="font-bold text-gray-900 dark:text-white text-base sm:text-lg tracking-tight">POPULAR LOGS <span className="text-orange-500">🔥</span></h3>
+          <div className="rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700/40 shadow-sm animate-[fadeSlideUp_0.5s_ease-out_0.2s_both]">
+            <div className="bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-3">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center text-sm">⭐</div>
+                  <h3 className="font-bold text-white text-sm uppercase tracking-wide">POPULAR LOGS 🔥</h3>
+                </div>
+                <div className="hidden sm:flex items-center gap-6 text-[11px] text-white/70 font-medium uppercase tracking-wider">
+                  <span>In stock</span>
+                  <span>Price per unit</span>
+                  <span>Sales</span>
+                </div>
               </div>
-              <button className="text-xs text-primary-600 dark:text-primary-400 hover:text-primary-700 font-semibold flex items-center gap-1 px-3 py-1.5 rounded-full hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-all">
-                See More <ChevronRight size={14} />
-              </button>
             </div>
-            <div className="grid gap-3">
+            <div className="divide-y divide-gray-100 dark:divide-gray-700/30 bg-white dark:bg-gray-800/60">
               {popularLogs.map((item, i) => (
-                <ProductCard key={i} {...item} delay={i} />
+                <ProductRow key={i} {...item} delay={i} />
               ))}
             </div>
           </div>
