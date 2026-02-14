@@ -116,6 +116,14 @@ const popularLogs = [
     price: 3980,
     sales: 203,
   },
+  {
+    platform: 'tiktok',
+    countries: ['GB', 'US'],
+    description: 'PREMIUM TIKTOK 1,000–5,000 followers 🎵 VERIFIED ACCOUNTS with posts and engagement 💎 (LOGIN MAIL ON OUTLOOK.COM)',
+    stock: 89,
+    price: 5980,
+    sales: 156,
+  },
 ]
 
 const categories = [
@@ -320,6 +328,7 @@ function MarqueeTicker() {
 export default function Dashboard() {
   const navigate = useNavigate()
   const [balanceVisible, setBalanceVisible] = useState(true)
+  const [popularExpanded, setPopularExpanded] = useState(false)
   const userName = 'bishop'
 
   return (
@@ -401,10 +410,22 @@ export default function Dashboard() {
               </div>
             </div>
             <div className="divide-y divide-gray-100 dark:divide-gray-700/30 bg-white dark:bg-gray-800/60">
-              {popularLogs.map((item, i) => (
+              {(popularExpanded ? popularLogs : popularLogs.slice(0, 5)).map((item, i) => (
                 <ProductRow key={i} {...item} delay={i} />
               ))}
             </div>
+            {popularLogs.length > 5 && (
+              <button
+                onClick={() => setPopularExpanded(!popularExpanded)}
+                className="w-full py-3 text-xs font-semibold text-amber-600 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-900/20 transition-all flex items-center justify-center gap-1.5 border-t border-gray-100 dark:border-gray-700/30 bg-white dark:bg-gray-800/60"
+              >
+                {popularExpanded ? (
+                  <>Show less <ChevronUp size={14} /></>
+                ) : (
+                  <>See More <ChevronRight size={14} /></>
+                )}
+              </button>
+            )}
           </div>
 
           {/* Category Sections */}
