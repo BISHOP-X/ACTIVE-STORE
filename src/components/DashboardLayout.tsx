@@ -266,10 +266,11 @@ export default function DashboardLayout() {
               <div className="relative">
                 <button
                   onClick={() => setCategoryOpen(!categoryOpen)}
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 text-white text-sm font-bold shadow-lg shadow-amber-500/20 hover:shadow-xl hover:shadow-amber-500/30 active:scale-95 transition-all duration-200"
+                  className="flex items-center gap-1.5 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-lg sm:rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 text-white text-[11px] sm:text-sm font-bold shadow-lg shadow-amber-500/20 hover:shadow-xl hover:shadow-amber-500/30 active:scale-95 transition-all duration-200"
                 >
-                  Select a category
-                  <ChevronDown size={16} className={`transition-transform duration-300 ${categoryOpen ? 'rotate-180' : ''}`} />
+                  <span className="hidden xs:inline">Select a category</span>
+                  <span className="xs:hidden">Category</span>
+                  <ChevronDown size={14} className={`transition-transform duration-300 ${categoryOpen ? 'rotate-180' : ''}`} />
                 </button>
 
                 {/* Dropdown panel */}
@@ -296,20 +297,17 @@ export default function DashboardLayout() {
                   </>
                 )}
               </div>
-              <div className="hidden lg:block">
-                {/* spacer on desktop */}
-              </div>
             </div>
 
             {/* Center: Logo (mobile) */}
-            <div className="lg:hidden absolute left-1/2 -translate-x-1/2">
+            <div className="lg:hidden flex-1 flex justify-center mx-2">
               <Logo size="sm" />
             </div>
 
             {/* Right: Theme toggle, Balance, Hamburger */}
-            <div className="flex items-center gap-3">
-              <button onClick={toggle} className="p-2.5 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400 transition-all duration-300 hover:rotate-12">
-                {dark ? <Sun size={18} /> : <Moon size={18} />}
+            <div className="flex items-center gap-2 sm:gap-3">
+              <button onClick={toggle} className="p-2 sm:p-2.5 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400 transition-all duration-300 hover:rotate-12">
+                {dark ? <Sun size={16} className="sm:w-[18px] sm:h-[18px]" /> : <Moon size={16} className="sm:w-[18px] sm:h-[18px]" />}
               </button>
               <div className="hidden sm:flex items-center gap-2 text-sm bg-gray-100/80 dark:bg-gray-800/80 px-4 py-2 rounded-full backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30">
                 <span className="text-gray-500 dark:text-gray-400">Balance:</span>
